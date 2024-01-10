@@ -1,2 +1,5 @@
-# startup
-startup application for s260
+## Startup
+
+My startup application for CS260
+
+[Notes](startup/notes.md)
