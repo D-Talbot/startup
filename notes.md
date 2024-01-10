@@ -7,10 +7,8 @@
 [Markdown Knowledge Base](https://github.com/webprogramming260/.github/blob/main/profile/essentials/gitHub/gitHub.md)
 
 #### Examples
-> [!NOTE]
-- > You got ***this*** 
+> You got ***this*** 
 * Ya you _do_
-> [!TIP]
 + Be **bold**
 1. x<sub>2</sub>
  - <sup>2</sup>x
@@ -19,7 +17,6 @@
 '''
  code
 '''
-> [!IMPORTANT]
 - [] be kind
 - [x] learn markdown :+1:
 
