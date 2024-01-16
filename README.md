@@ -12,8 +12,7 @@ Introducing SaveDuck, a twist on the classic word-guessing game! Ever felt that 
 
 ### Key Features
 
-- Secure login over HTTPS &/or create an account
-- User account creation and login functionality. Display of the player's name after logging in.
+- Secure login/registration over HTTPS (User account creation and login functionality + display of the player's name after logging in)
 - Ability to play SaveDuck and view the scoreboard
 - Includes both an About page and the source from GitHub
 - Storage of words, user profiles, scores, and game details.
