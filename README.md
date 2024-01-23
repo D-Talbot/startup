@@ -31,6 +31,11 @@ How I will be using each of the required technologies:
 - **React** - Application ported to use the React web framework.
 
 ## HTML Deliverable
+### Created basic HTML content/structure with 4 HTML pages: index, play, scoreboard, and the About Page.
+- Application data: simple alphabet buttons, word underscores, and user name.
+- Authentication: Form for user to create an account and/or login as well as displaying their name. 
+- Database data: Scoreboard for most ducks saved.
+- WebSocket data: Speach bubble for duck to display messages to the user in real time. 
 
 ## CSS Deliverable
 
