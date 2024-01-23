@@ -31,8 +31,8 @@ How I will be using each of the required technologies:
 - **React** - Application ported to use the React web framework.
 
 ## HTML Deliverable
-➡️ For this deliverable I built out the basic content/structure of my application using HTML
-- **HTML** pages - 4 pages: index, play, scoreboard, and the about page -> neccessary for logging in and playing SaveDuck.
+➡️  For this deliverable I built out the basic content/structure of my application using HTML
+- **HTML Pages**  - 4 pages: index, play, scoreboard, and the about page -> neccessary for logging in and playing SaveDuck.
 - **Links** - Each page is accessible on every page.
 - **Application** - Simple alphabet buttons, word underscores, and user name.
 - **DB/Login** - Scoreboard for most ducks saved. Form for user to create an account and/or login as well as displaying their name. 
