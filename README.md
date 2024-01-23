@@ -37,7 +37,7 @@ How I will be using each of the required technologies:
 - **Application** - Simple alphabet buttons, word underscores, and user name.
 - **DB/Login** - Scoreboard for most ducks saved. Form for user to create an account and/or login as well as displaying their name. 
 - **Images** - Plenty of placeholder images of ducks (ex: about, play, and index have some)
-- **WebSocket Data** - Speach bubble for duck to display messages to the user in real time. 
+- **WebSocket Data** - Announcment updates on the status of the ducks.
 
 ## CSS Deliverable
 
