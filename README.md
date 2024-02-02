@@ -48,6 +48,8 @@ How I will be using each of the required technologies:
 - **Application text content** - Consistent fonts
 - **Application images** -  
 
+#### ignore everything below this for now :)
+
 ## JavaScript deliverable
 ➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
 
