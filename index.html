@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaveDuck</title>
-    <link rel="icon" href="duck2.png" />
+    <link rel="icon" href="rubduck.png"/>
 
     <link rel="stylesheet" href="styles.css"/>
 
@@ -14,20 +14,23 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"
     />
 </head>
-<body>
-    <header>
-    <nav>
-        <div class="nav-center">
-            <h1 class="navbar-brand">SaveDuck</h1>
+<body class="bg-dark text-light">
+    <header class="container-fluid" style="display: flex; flex-direction: row;">
+    <nav class="navbar fixed-top navbar-dark" style="display: flex; flex-direction: row;">
+        <div id="duck-brand" style="display: flex; justify-content: center; 
+        align-items: center; padding: 10px;">
+            <h1 style="font-size: 28px;" class="navbar-brand">SaveDuck</h1>
+            <img src="rubduck.png" alt="rubber duck" width="33" style="padding-top: 10px; ">
         </div>
-    <div class="nav-center">
-        <menu class="navbar-menu">
+        <menu class="navbar-nav" style="display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;">
             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
             <li class="nav-item"><a class="nav-link" href="high_scores.html">Score Board</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </menu>
-    </div>
     </nav>
     </header>
     <!-- <h8>"The less gory game of Hangman: saving ducks by solving words!"</h8> -->
@@ -35,17 +38,21 @@
     <main class="container-main">
         <img src="duck2.png" alt="duck" width="200">
         <div>
-            <hr><h2>Are you ready to save some ducks?</h1>
+            <h2>Are you ready to save some ducks?</h1>
                 <p>Login now to start rescuing!</p>
-                <form method="get" action="play.html">
-                    <label for="username" class="form-label">Username: </label>
-                    <input type="text" class="form-control" id="username" placeholder="Your username"/>
-                    <label for="password" class="form-label">Password: </label>
-                    <input type="text" class="form-control" id="password" placeholder="Your password"/>
-                    <button class="button-primary" type="submit">Login</button>
-                    <button type="submit">Create Account</button>
-                </form>
-                <br>
+                <div class="mb-3">
+                    <form method="get" action="play.html">
+                        <label for="username" class="form-label">Username: </label>
+                        <input type="text" class="form-control" style="margin-bottom: 10px" id="username" placeholder="Your username"/>
+                        <label for="password" class="form-label">Password: </label>
+                        <input type="text" class="form-control" id="password" placeholder="Your password"/>
+                        <div>
+                            <button class="button-primary" type="submit">Login</button>
+                            <button class="button-primary" type="submit">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+                
         </div>
     </main>
     <footer class="modal-footer">
