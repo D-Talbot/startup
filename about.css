@@ -1,0 +1,24 @@
+.picture-box {
+    height: calc(100px + 6em);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#picture img {
+    grid-column: 1 / -1; /* the -1 is just a fancy way to say "span all the columns" */
+    height: 50%;
+    grid-row: 1;
+    border-radius: 10px;
+    margin-top: -55px;
+}
+#purple {
+    background-color: rgb(187, 151, 201);
+}
+p {
+    grid-column: 1 / -1;
+    padding-bottom: 30px;
+    margin-top: 60px;
+    font-size: 20px;
+    width: 70%;
+    font-family: "Fuzzy Bubbles", Helvetica, serif;
+}
