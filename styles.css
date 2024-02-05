@@ -45,6 +45,12 @@ nav a:hover {
     border-radius: 10px;
 }
 
+.button-primary:hover {
+    background-color: rgb(208, 184, 96);
+    color: white;
+    text-decoration: none;
+  }
+
 header {
     flex: 0 80px;
 }
