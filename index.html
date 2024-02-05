@@ -14,33 +14,39 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"
     />
 </head>
-<body class="bg-dark text-light">
-    <header class="container-fluid">
-    <nav class="navbar fixed-top navbar-dark">
-        <h1 class="navbar-brand">SaveDuck</h1>
-        <menu class="navbar-nav">
+<body>
+    <header>
+    <nav>
+        <div class="nav-center">
+            <h1 class="navbar-brand">SaveDuck</h1>
+        </div>
+    <div class="nav-center">
+        <menu class="navbar-menu">
             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
             <li class="nav-item"><a class="nav-link" href="high_scores.html">Score Board</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </menu>
+    </div>
     </nav>
     </header>
     <!-- <h8>"The less gory game of Hangman: saving ducks by solving words!"</h8> -->
 
-    <main class="container-fluid">
+    <main class="container-main">
         <img src="duck2.png" alt="duck" width="200">
-        <hr><h2>Are you ready to save some ducks?</h1>
-            <p>Login now to start rescuing!</p>
-            <form method="get" action="play.html">
-                <label for="username" class="form-label">Username: </label>
-                <input type="text" class="form-control" id="username" placeholder="Your username"/>
-                <label for="password" class="form-label">Password: </label>
-                <input type="text" class="form-control" id="password" placeholder="Your password"/>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Create Account</button>
-            </form>
-            <br>
+        <div>
+            <hr><h2>Are you ready to save some ducks?</h1>
+                <p>Login now to start rescuing!</p>
+                <form method="get" action="play.html">
+                    <label for="username" class="form-label">Username: </label>
+                    <input type="text" class="form-control" id="username" placeholder="Your username"/>
+                    <label for="password" class="form-label">Password: </label>
+                    <input type="text" class="form-control" id="password" placeholder="Your password"/>
+                    <button class="button-primary" type="submit">Login</button>
+                    <button type="submit">Create Account</button>
+                </form>
+                <br>
+        </div>
     </main>
     <footer class="modal-footer">
         <div class="container-fluid">

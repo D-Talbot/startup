@@ -2,6 +2,25 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    background-color: grey;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-primary {
+    margin-top: 20px;
 }
 
 header {
@@ -14,6 +33,12 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+
 }
 
 img {
@@ -39,6 +64,7 @@ footer a {
     float: right;
     color: cornflowerblue;
 }
+
 
 @media (max-height: 600px) {
     header {
