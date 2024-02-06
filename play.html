@@ -15,16 +15,13 @@
 </head>
 <body class="bg-dark text-light">
     <header class="container-fluid" style="display: flex; flex-direction: row;">
-    <nav class="navbar fixed-top navbar-dark" style="display: flex; flex-direction: row;">
+    <nav class="navbar navbar-dark" style="display: flex; flex-direction: row;">
         <div id="duck-brand" style="display: flex; justify-content: center; 
         align-items: center; padding: 10px;">
             <h1 style="font-size: 28px;" class="navbar-brand">SaveDuck</h1>
             <img src="rubduck.png" alt="rubber duck" width="33" style="padding-top: 10px; ">
         </div>
-        <menu class="navbar-nav" style="display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;">
+        <menu class="navbar-nav">
             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
             <li class="nav-item"><a class="nav-link" href="high_scores.html">Score Board</a></li>
@@ -34,27 +31,45 @@
     </header>
 
     <main>
-        <li>Lacy has saved a duck!</ul>
-        <p>Duck Rescuer: Anna</p>
+        <div class="block">
+            <p style="margin-right: 20px;">Duck Rescuer: Anna</p>
+            <label class="form-label" for="count">Guesses Left:</label>
+            <input style="width: 10%; margin-left: -10px"class="form-control" type="number" id="count" value="6" readonly/>
+        </div>
+        <div class="play-content">
+            
+            <div class="left-side" style="padding-left: 20px;">
+                <div>
+                    <li>Lacy has saved a duck!</ul>
+                </div>
+                    
+                    <div class="wrap">
+                        <img src="hang2.png" alt="hang" width="500">
+                    </div>
+            </div>
+            <div>
+                <h1 id="underscores">_ _ _ _ _ _ _ _</h1>
+            </div>
+            <div class="right-side">
+                <h2>Alphabet</h2>
+                <div id="buttons">
+                    <button>A</button><button>B</button> <button>C</button> <button>D</button> <button>E</button> <button>F</button> <button>G</button> <button>H</button> <button>I</button>
+                    <button>J</button> <button>K</button> <button>L</button> <button>M</button> <button>N</button> <button>O</button> <button>P</button> <button>Q</button> <button>R</button>
+                    <button>S</button> <button>T</button> <button>U</button><button>V</button> <button>W</button> <button>X</button> <button>Y</button> <button>Z</button>
+                </div>
+                <!-- <div class="row1">
+                    <button>A</button> <button>B</button> <button>C</button> <button>D</button> <button>E</button> <button>F</button> <button>G</button> <button>H</button> <button>I</button>
+                </div>
+                <div class="row2">
+                    <button>J</button> <button>K</button> <button>L</button> <button>M</button> <button>N</button> <button>O</button> <button>P</button> <button>Q</button> <button>R</button>
+                </div>
+                <div class="row3">
+                    <button>S</button> <button>T</button> <button>U</button><button>V</button> <button>W</button> <button>X</button> <button>Y</button> <button>Z</button>
+                </div> -->
         
-        <div>
-            <label for="count">Guesses Left:</label>
-            <input type="number" id="count" value="6" readonly/>
-          </div>
-
-        <img src="hang.png" alt="hang" width="500">
-        <img src="duck2.png" alt="duck" width="200">
-        <img src="bubble2.png" alt="speach bubble" width="100">
-
-        <h2>Alphabet</h2>
-        <button>A</button> <button>B</button> <button>C</button> <button>D</button> <button>E</button> <button>F</button> <button>G</button>
-        <button>H</button> <button>H</button> <button>J</button> <button>K</button> <button>L</button> <button>M</button> <button>N</button>
-        <button>O</button> <button>P</button> <button>Q</button> <button>R</button> <button>S</button> <button>T</button> <button>U</button>
-        <button>V</button> <button>W</button> <button>X</button> <button>Y</button> <button>Z</button>
-
-        <h1>_ _ _ _ _ _ _ _ _</h1>
-
-        <button>Reset</button>
+                <button style="width: 72px;"class="button-primary">Reset</button>
+            </div>
+        </div>
     </main>
     <footer class="modal-footer">
         <div class="container-fluid">

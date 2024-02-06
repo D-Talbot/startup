@@ -1,3 +1,86 @@
 main {
-    background-color: #267fa8;
+    background-color: #85b6cd;
 }
+
+.play-content {
+    display: grid;
+    grid-template-columns: 1fr .5fr 1fr;
+    grid-gap: 40px;
+}
+
+.left-side {
+    grid-column: 1;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#buttons button {
+    margin-top: 20px;
+    height: 45px;
+    width: 45px;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    padding-top: 10px;
+    margin-right: 5px;
+    border: transparent;
+    color: white;
+    border-radius: 10px;
+}
+#underscores {
+    grid-column: 2;
+    margin-top: 230px;
+}
+
+.right-side {
+    grid-column: 3;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+}
+
+.block p {
+    width: 45%;
+}
+
+.block label {
+    width: 30%;
+}
+
+.block input {
+    width: 5%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+}
+.left-side li {
+    padding-bottom: 50px;
+}
+.right-side button {
+    margin-top: 20px;
+    height: 45px;
+    width: 45px;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    padding-top: 10px;
+    margin-right: 5px;
+    border: transparent;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(57, 57, 56);
+    color: white;
+    text-decoration: none;
+  }
