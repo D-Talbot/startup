@@ -11,9 +11,7 @@
     border-radius: 10px;
     margin-top: -55px;
 }
-#purple {
-    background-color: rgb(187, 151, 201);
-}
+
 p {
     grid-column: 1 / -1;
     padding-bottom: 30px;
