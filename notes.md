@@ -23,7 +23,7 @@
 '''
 sudo ./deployFiles.sh -k ~/key/prod-key.cer -h simon.saveduck.click -s startup
 chmod +x deployFiles.sh
-./deployFiles.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
+./deployFiles.sh -k ../key/prod-key.cer -h simon.saveduck.click -s startup 
 '''
 
 ## Other Notes

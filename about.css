@@ -1,16 +1,19 @@
 .picture-box {
-    height: calc(100px + 6em);
+    height: 60%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     max-width: 100%;
+    align-items: center;
 }
 
 #picture img {
     grid-column: 1 / -1; /* the -1 is just a fancy way to say "span all the columns" */
-    height: 50%;
+    height: 100%;
     grid-row: 1;
     border-radius: 10px;
     max-width: 100%;
+    max-height: 400px;
+    margin-bottom: 10px;
 }
 
 p {
@@ -21,7 +24,10 @@ p {
     width: 70%;
     font-family: "Fuzzy Bubbles", Helvetica, serif;
 }
-
+h2 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
 @media (max-height: 600px) {
     header {
         display: none;

@@ -41,14 +41,14 @@ How I will be using each of the required technologies:
 
 ## CSS Deliverable
 ➡️ For this deliverable I properly styled the application into its final appearance.
-- **Header, footer, and main content body** - 
-- **Navigation elements** - I dropped the underlines and changed the color for anchor elements.
-- **Responsive to window resizing** - My app looks great on all window sizes and devices
-- **Application elements** - Used good contrast and whitespace
-- **Application text content** - Consistent fonts
-- **Application images** -  
+- **Header, footer, and main content body** - I applied css styling to all of them to look nice :)
+- **Navigation elements** - I styled the nav bar using bootstrap, including the SaveDuck logo.
+- **Responsive to window resizing** - My web page resizes and is responsive.
+- **Application elements** - I used good contrast whitespace.
+- **Application text content** - Consistent fonts, styling (italics, etc.), responsive text.
+- **Application images** - I properly styled and placed my images. 
 
-#### ignore everything below this for now :)
+#### ignore everything below this for now 
 
 ## JavaScript deliverable
 ➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
