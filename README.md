@@ -59,14 +59,13 @@ How I will be using each of the required technologies:
 - **application logic** - The highlight and ranking number change based up the user's selection
 
 ## Service deliverable
-➡️ For this deliverable I added backend endpoints that receives votes and returns the voting totals.
+➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
 
-- **Node.js/Express HTTP service** - done!
-- **Static middleware for frontend** - done!
-- **Calls to third party endpoints** - I didn't have time to implement this. 😔
-- **Backend service endpoints** - Placeholders for login that stores the current user on the server.
-- **Endpoints** - for voting.
-- **Frontend calls service endpoints - I did this using the fetch function.
+**Prerequisite** - Simon JavaScript deployed to simon.saveduck.click. Link included to my GitHub startup repo displayed in the footers. Notes here documenting what you modified/added with this deliverable
+**Future Login** - After login, you are directed to the play page where the username is saved and displayed.
+**Future Database** - Displayed the number of ducks saved (games won). Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+**Future WebSocket** - I used the setInterval function to periodically create random "realtime" websocket data of other users score/username. This will be replaced later once I do the WebSocket deliverable.
+**Application Interaction Logic** - Randomly generated underscored word (user won't recieve the same one until they go through the rest). "Hangman" Functionality/Gameplay: The letters only show up after they get one correct. 
 
 ## DB/Login deliverable
 ➡️For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
