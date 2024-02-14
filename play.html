@@ -34,10 +34,15 @@ overflow-x: none;">
 
     <main>
         <div class="block">
-            <p>Duck Rescuer: Anna</p>
+            <p class="players">Duck Rescuer: </p>
+            <span class="player-name"></span>
             <label class="form-label" for="count">Guesses Left:</label>
             <input class="form-control" type="number" id="count" value="6" readonly/>
-            <p>Lacy has saved a duck!</p>
+            <div id="player-messages">
+                <div class="event"><span class="player-event">Håkon</span> scored 377</div>
+                <div class="event"><span class="player-event">Tim</span> started a new game</div>
+                <div class="event"><span class="system-event">game</span> connected</div>
+              </div>
         </div>
         <div>
             
