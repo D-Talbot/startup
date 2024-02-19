@@ -22,13 +22,6 @@ Introducing SaveDuck, a twist on the classic word-guessing game! Ever felt that 
 How I will be using each of the required technologies:
 - **HTML** - Uses correct HTML structure for application. Four HTML pages: Login, Play, Scoreboard, and the About Page. Displaying the virtual duck, word underscores, and interactive buttons.
 - **CSS** -Styling the game for a visually appealing and responsive design. Each page uses good design choices such as whitespace, colors, typography, and contrast.
-- **JavaScript** - Provides various displays for each page. Includes user interaction for guessing letters via clickable alphabet buttons and logic for revealing correct guesses and tracking incorrect ones. (ex: interactive gameplay, letter selection, and text updates.)
-- **Service** - Backend service with endpoints for:
-  - login
-  - retrieving scores (including the date, names, etc.)
-- **DB/Authentication** - Stores both the users and the date in the database. Authentication through registration and and login with credentials securely stored in the database. 
-- **WebSocket** - After a user plays, they can check the scoreboard for their rank and their data is rendered each time a user starts/ends a game. Facilitating real-time communication between the client and server. Ensuring instant updates on word progress, duck reactions, and game events.
-- **React** - Application ported to use the React web framework.
 
 ## HTML Deliverable
 ➡️  For this deliverable I built out the basic content/structure of my application using HTML
@@ -51,13 +44,12 @@ How I will be using each of the required technologies:
 #### ignore everything below this for now 
 
 ## JavaScript deliverable
-➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
-
-- **login** - When you press enter or the login button it takes you to the voting page.
-- **database** - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-- **WebSocket** - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
-- **application logic** - The highlight and ranking number change based up the user's selection
-
+-➡️ Provides various displays for each page. Includes user interaction for guessing letters via clickable alphabet buttons and logic for revealing correct guesses and tracking incorrect ones. (ex: interactive gameplay, letter selection, and text updates.)
+- **Service** - Backend service with endpoints for:
+  - login
+  - retrieving scores (including the date, names, etc.)
+- **DB/Authentication** - Stores both the users and the date in the database. Authentication through registration and and login with credentials securely stored in the database. 
+- **WebSocket** - After a user plays, they can check the scoreboard for their rank and their data is rendered each time a user starts/ends a game. Facilitating real-time communication between the client and server. Ensuring instant updates on word progress, duck reactions, and game events.
 ## Service deliverable
 ➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
 
