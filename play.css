@@ -47,11 +47,24 @@ body {
     border-radius: 10px;
 }
 
+#player-messages {
+    padding-left: 20px;
+}
+
 #buttons button:hover {
     background-color: rgb(208, 184, 96);
     color: white;
     text-decoration: none;
   }
+
+.success {
+    background-color: rgb(51, 170, 65) !important;
+}
+
+.failure {
+    background-color: rgb(161, 151, 151) !important;
+}
+
 #underscores {
     grid-column: 2;
     margin-top: 230px;

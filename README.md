@@ -44,12 +44,12 @@ How I will be using each of the required technologies:
 #### ignore everything below this for now 
 
 ## JavaScript deliverable
--➡️ Provides various displays for each page. Includes user interaction for guessing letters via clickable alphabet buttons and logic for revealing correct guesses and tracking incorrect ones. (ex: interactive gameplay, letter selection, and text updates.)
+➡️ Provides various displays for each page. Includes user interaction for guessing letters via clickable alphabet buttons and logic for revealing correct guesses and tracking incorrect ones. (ex: interactive gameplay, and letter selection)
 - **Service** - Backend service with endpoints for:
   - login
   - retrieving scores (including the date, names, etc.)
 - **DB/Authentication** - Stores both the users and the date in the database. Authentication through registration and and login with credentials securely stored in the database. 
-- **WebSocket** - After a user plays, they can check the scoreboard for their rank and their data is rendered each time a user starts/ends a game. Facilitating real-time communication between the client and server. Ensuring instant updates on word progress, duck reactions, and game events.
+- **WebSocket** - After a user plays, they can check the scoreboard for their rank and their data is rendered each time a user starts/ends a game. Facilitating real-time communication between the client and server. Ensuring instant updates on word progress and game events.
 ## Service deliverable
 ➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
 
