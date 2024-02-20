@@ -37,11 +37,10 @@ overflow-x: none;">
             <p class="players">Duck Rescuer: </p>
             <span class="player-name"></span>
             <label class="form-label" for="count">Guesses Left:</label>
-            <input class="form-control" type="number" id="count" value="6" readonly/>
+            <input class="form-control" type="number" id="count" value="9" readonly/>
             <div id="player-messages">
-                <div class="event"><span class="player-event">Håkon</span> scored 377</div>
-                <div class="event"><span class="player-event">Tim</span> started a new game</div>
-                <div class="event"><span class="system-event">game</span> connected</div>
+                <div class="event"><li class="player-event">Jill</li> scored 377</div>
+                <div class="event"><li class="player-event">Tim</li> started a new game</div>
               </div>
         </div>
         <div>
@@ -51,27 +50,42 @@ overflow-x: none;">
                         <img src="hang2.png" alt="hang" width="500">
                     </div>
             </div>
-            <div>
+            <div id="word-display">
                 <h1 id="underscores">_ _ _ _ _ _ _ _</h1>
             </div>
             <div class="right-side">
                 <h2>Alphabet</h2>
                 <div id="buttons">
-                    <button>A</button><button>B</button> <button>C</button> <button>D</button> <button>E</button> <button>F</button> <button>G</button> <button>H</button> <button>I</button>
-                    <button>J</button> <button>K</button> <button>L</button> <button>M</button> <button>N</button> <button>O</button> <button>P</button> <button>Q</button> <button>R</button>
-                    <button>S</button> <button>T</button> <button>U</button><button>V</button> <button>W</button> <button>X</button> <button>Y</button> <button>Z</button>
+                    <button id="a-button" onclick="addLetter('A', 'a-button')">A</button>
+                    <button id="b-button" onclick="addLetter('B', 'b-button')">B</button>
+                    <button id="c-button" onclick="addLetter('C', 'c-button')">C</button>
+                    <button id="d-button" onclick="addLetter('D', 'd-button')">D</button>
+                    <button id="e-button" onclick="addLetter('E', 'e-button')">E</button>
+                    <button id="f-button" onclick="addLetter('F', 'f-button')">F</button>
+                    <button id="g-button" onclick="addLetter('G', 'g-button')">G</button>
+                    <button id="h-button" onclick="addLetter('H', 'h-button')">H</button>
+                    <button id="i-button" onclick="addLetter('I', 'i-button')">I</button>
+                    <button id="j-button" onclick="addLetter('J', 'j-button')">J</button>
+                    <button id="k-button" onclick="addLetter('K', 'k-button')">K</button>
+                    <button id="l-button" onclick="addLetter('L', 'l-button')">L</button>
+                    <button id="m-button" onclick="addLetter('M', 'm-button')">M</button>
+                    <button id="n-button" onclick="addLetter('N', 'n-button')">N</button>
+                    <button id="o-button" onclick="addLetter('O', 'o-button')">O</button>
+                    <button id="p-button" onclick="addLetter('P', 'p-button')">P</button>
+                    <button id="q-button" onclick="addLetter('Q', 'q-button')">Q</button>
+                    <button id="r-button" onclick="addLetter('R', 'r-button')">R</button>
+                    <button id="s-button" onclick="addLetter('S', 's-button')">S</button>
+                    <button id="t-button" onclick="addLetter('T', 't-button')">T</button>
+                    <button id="u-button" onclick="addLetter('U', 'u-button')">U</button>
+                    <button id="v-button" onclick="addLetter('V', 'v-button')">V</button>
+                    <button id="w-button" onclick="addLetter('W', 'w-button')">W</button>
+                    <button id="x-button" onclick="addLetter('X', 'x-button')">X</button>
+                    <button id="y-button" onclick="addLetter('Y', 'y-button')">Y</button>
+                    <button id="z-button" onclick="addLetter('Z', 'z-button')">Z</button>
+
                 </div>
-                <!-- <div class="row1">
-                    <button>A</button> <button>B</button> <button>C</button> <button>D</button> <button>E</button> <button>F</button> <button>G</button> <button>H</button> <button>I</button>
-                </div>
-                <div class="row2">
-                    <button>J</button> <button>K</button> <button>L</button> <button>M</button> <button>N</button> <button>O</button> <button>P</button> <button>Q</button> <button>R</button>
-                </div>
-                <div class="row3">
-                    <button>S</button> <button>T</button> <button>U</button><button>V</button> <button>W</button> <button>X</button> <button>Y</button> <button>Z</button>
-                </div> -->
         
-                <button style="width: 72px;"class="button-primary">Reset</button>
+                <button style="width: 72px;" id="reset-button" onclick="reset()" class="button-primary">Reset</button>
             </div>
         </div>
     </main>

@@ -1,3 +1,4 @@
+// save score to scoreboard (and other data)
 function loadScores() {
     let scores = [];
     const scoresText = localStorage.getItem('scores');
