@@ -1,4 +1,5 @@
 let randomWord;
+let totalScore = 0;
 let hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
 
 wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddling",
@@ -46,7 +47,10 @@ function addLetter(letter, elemendID) {
         }
         const wordDisplay = document.getElementById('underscores');
         wordDisplay.textContent = hiddenWord.join(' ');
-        isGameOver();
+        if (isGameOver()) {
+            totalScore += 1;
+            saveScore(totalScore);
+        }
     }
     // greying out button color if incorrect letter choice
     // decrease the guesses left value 
@@ -70,6 +74,42 @@ function updateScore(score) {
     scoreEl.textContent = score;
 }
 
+function updateScores(userName, score, scores) {
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
+
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (score > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      scores.push(newScore);
+    }
+
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
+
+    return scores;
+}
+
+function saveScore(score) {
+    const userName = getPlayerName();
+    let scores = [];
+    const scoresText = localStorage.getItem('scores');
+    if (scoresText) {
+      scores = JSON.parse(scoresText);
+    }
+    scores = updateScores(userName, score, scores);
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
+
 function reset() {
     const wordDisplay = document.getElementById('underscores');
     hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
@@ -87,11 +127,12 @@ window.onload = () => {
     displayPlayerName();
     // psuedo websocket data
     setInterval(() => {
-        const score = Math.floor(Math.random() * 3000);
-        const chatText = document.querySelector('#player-messages');
-        chatText.innerHTML =
-            `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` + chatText.innerHTML;
-        }, 5000);
+    const ducksSaved = Math.floor(Math.random() * 10); // Generate a random number of ducks saved
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+        `<div class="event"><span class="player-event">Danica</span> has saved ${ducksSaved} duck(s)</div>` + chatText.innerHTML;
+    }, 5000);
+
 }
 
 // reset game (if pressed) -> choose new word clear board
