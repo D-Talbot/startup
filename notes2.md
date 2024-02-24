@@ -1,5 +1,12 @@
 # Midterm Study Guide
+## Table of Contents
 
+- [Kahoot](#kahoot)
+- [Simple Console Commands](#simple-console-commands)
+- [DNS](#dns)
+- [HTML](#html)
+- [CSS](#css)
+- [JavaScript](#javascript)
 ## Kahoot
 
 ##### 1 - T/F You can use this CSS to load fonts from Google
