@@ -318,3 +318,96 @@ ls -l | grep ' Nov ' | wc -l
 5. **DOM Manipulation**:
    - Document Object Model (DOM): Represents the structure of HTML documents.
    - `document.querySelector()`: Method to select a single element from the DOM.
+
+# JavaScript Introduction
+
+![ES Logo](es-logo-image-link-here)
+
+## Deeper Dive Reading
+
+- [MDN JavaScript](mdn-javascript-link-here)
+- [ECMA Specification](ecma-spec-link-here) *(This official specification is only for reference)*
+
+JavaScript, officially known as ECMAScript, is a weakly typed language based on concepts found in C, Java, and Scheme. It stands out as the most widely used programming language globally. JavaScript is versatile, running on every web browser, and it is commonly employed as a web server language and for creating serverless functions. This guide covers the fundamental aspects of the language required for developing a reasonable website. While many features won't be discussed here, exploring the language in depth is highly recommended for becoming a proficient web programmer.
+
+JavaScript is typically executed using an interpreter at runtime rather than being compiled into a machine-specific binary at build time. This approach offers portability but may lead to runtime errors, such as using an undefined variable, which are often discovered when the program crashes during execution.
+
+## JavaScript Versions
+
+The following table outlines the version history of JavaScript. While version details might not be crucial at the moment, understanding them becomes essential for web application development due to browser compatibility concerns. Consult resources like MDN or CanIUse when considering the use of specific JavaScript features to ensure proper support.
+
+| Year | Version | Features                                      |
+|------|---------|-----------------------------------------------|
+| 1997 | ES1     | Types, functions                              |
+| 1999 | ES3     | Regex, exceptions, switch                     |
+| 2009 | ES5     | JSON, array iteration                         |
+| 2015 | ES6     | Let/const, default params, classes, template literals, destructuring, generators, promises, modules, internationalization |
+| 2016 | ES2016  | Array.includes                                |
+| 2017 | ES2017  | Async/await                                   |
+| 2018 | ES2018  | Rest/spread, promise.finally                  |
+| 2019 | ES2019  | String.trim                                   |
+| 2020 | ES2020  | ?? operator                                   |
+
+## Getting Started
+
+Let's begin with a basic example. The following JavaScript concatenates three strings together and then discards the result.
+
+```javascript
+'Hello' + ' ' + 'world';
+```
+
+Slightly more complex is calling a function with the result of our concatenated string. Here, we use the built-in function `console.log` to output the string to the debugger console.
+
+```javascript
+console.log('Hello' + ' ' + 'world');
+// OUTPUT: Hello world
+```
+
+You can also write your own functions.
+
+```javascript
+function join(a, b) {
+  return a + ' ' + b;
+}
+
+console.log(join('Hello', 'world'));
+// OUTPUT: Hello world
+```
+
+## Comments
+
+You can comment your JavaScript with either line or block comments.
+
+```javascript
+// Line comment
+
+/*
+Block comment
+*/
+## Code Delimiters
+
+While not technically required in most cases, it is considered good form to end JavaScript statements with a semicolon (`;`). Code blocks, and their resulting scope, are defined with curly braces (`{ }`).
+
+## JavaScript Console
+
+### Deeper Dive Reading
+
+- [MDN JavaScript Console](mdn-javascript-console-link-here)
+
+The JavaScript `console` object provides interaction with the JavaScript runtime's debugger console. Note that this usage of `console` should not be confused with your operating system's console (AKA terminal or command line). The `console` object offers functionality for outputting the value of text and objects, running timers, and counting iterations. These are useful debugging tools when you can execute your code in an interactive debugger, such as VS Code.
+
+### Log
+
+The basic usage of the `console` object is to output a log message.
+
+```javascript
+console.log('hello');
+// OUTPUT: hello
+```
+
+You can create formatted messages in the log parameter.
+
+```javascript
+console.log('hello %s', 'world');
+// OUTPUT: hello world
+```
