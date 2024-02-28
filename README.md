@@ -1,3 +1,4 @@
+![](logo.png)
 # SaveDuck 🦆
 > The less gory game of Hangman: saving ducks by solving words! 
 
