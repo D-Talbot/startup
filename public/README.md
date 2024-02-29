@@ -17,12 +17,15 @@ Introducing SaveDuck, a twist on the classic word-guessing game! Ever felt that 
 - Ability to play SaveDuck and view the scoreboard
 - Includes both an About page and the source from GitHub
 - Storage of words, user profiles, scores, and game details.
-- Real-time updates on word progress and duck reactions.
+- Real-time updates on word progress and alphabet characters. 
 ### Technologies
 
 How I will be using each of the required technologies:
 - **HTML** - Uses correct HTML structure for application. Four HTML pages: Login, Play, Scoreboard, and the About Page. Displaying the virtual duck, word underscores, and interactive buttons.
 - **CSS** -Styling the game for a visually appealing and responsive design. Each page uses good design choices such as whitespace, colors, typography, and contrast.
+- **Javascript Application** - Simple alphabet buttons, word/character underscores, and user name iteractivity.
+- **DB/Login** - Scoreboard for most ducks saved. Form for user to create an account and/or login as well as displaying their name. 
+- **WebSocket Data/Service** - Endpoints for getting and updating the scores. Announcment updates on the status of the ducks and their rescuers.
 
 ## HTML Deliverable
 ➡️  For this deliverable I built out the basic content/structure of my application using HTML
@@ -51,14 +54,15 @@ How I will be using each of the required technologies:
   - retrieving scores (including the date, names, etc.)
 - **DB/Authentication** - Stores both the users and the date in the database. Authentication through accout/login which is stored in the database. 
 - **WebSocket** - After a user plays, they can check the scoreboard for their rank and their data shown on the scoreboard. Psuedo websocket data generated.
-## Service deliverable
-➡️ For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
 
-**Prerequisite** - Simon JavaScript deployed to simon.saveduck.click. Link included to my GitHub startup repo displayed in the footers. Notes here documenting what you modified/added with this deliverable
-**Future Login** - After login, you are directed to the play page where the username is saved and displayed.
-**Future Database** - Displayed the number of ducks saved (games won). Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-**Future WebSocket** - I used the setInterval function to periodically create random "realtime" websocket data of other users score/username. This will be replaced later once I do the WebSocket deliverable.
-**Application Interaction Logic** - Randomly generated underscored word (user won't recieve the same one until they go through the rest). "Hangman" Functionality/Gameplay: The letters only show up after they get one correct. 
+## Service deliverable
+➡️ For this deliverable I added backend endpoints that receives.. and returns.
+
+- **Node.js/Express HTTP service** - done!
+- **Calls to third party endpoints** - done!
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for getting/updating the scoreboard.
+- **Frontend calls service endpoints** - I did this using the fetch function.
+- **Static middleware for frontend** - done!
 
 ## DB/Login deliverable
 ➡️For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
