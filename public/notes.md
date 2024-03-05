@@ -27,12 +27,26 @@ chmod +x deployFiles.sh
 ./deployFiles.sh -k ../../key/prod-key.cer -h simon.saveduck.click -s simon 
 '''
 
--STARTUP
+- Simon Https / Back End
+'''
+sudo ./deployFiles.sh -k ../../key/prod-key.cer -h simon.saveduck.click -s simon
+chmod +x deployService.sh
+./deployService.sh -k ../../key/prod-key.cer -h simon.saveduck.click -s simon 
+'''
+
+- STARTUP
 '''
 sudo ./deployFiles.sh -k ~/key/prod-key.cer -h startup.saveduck.click -s startup
 chmod +x deployFiles.sh
 ./deployFiles.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
+'''
 
+- Startup Https / Back End
+'''
+sudo ./deployFiles.sh -k ../../key/prod-key.cer -h startup.saveduck.click -s startup
+chmod +x deployService.sh
+./deployService.sh -k ../../key/prod-key.cer -h startup.saveduck.click -s startup 
+'''
 
 ## Other Notes
 [other page](startup/notes2.md)
