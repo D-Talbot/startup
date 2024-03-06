@@ -8,6 +8,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 3000;
 app.use(express.json());
 
 // Router for service endpoints 
+app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
 

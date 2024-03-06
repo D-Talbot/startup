@@ -29,9 +29,9 @@ chmod +x deployFiles.sh
 
 - Simon Https / Back End
 '''
-sudo ./deployFiles.sh -k ../../key/prod-key.cer -h simon.saveduck.click -s simon
+sudo ./deployFiles.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
 chmod +x deployService.sh
-./deployService.sh -k ../../key/prod-key.cer -h simon.saveduck.click -s simon 
+./deployService.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon 
 '''
 
 - STARTUP
@@ -43,9 +43,9 @@ chmod +x deployFiles.sh
 
 - Startup Https / Back End
 '''
-sudo ./deployFiles.sh -k ../../key/prod-key.cer -h startup.saveduck.click -s startup
+sudo ./deployFiles.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
 chmod +x deployService.sh
-./deployService.sh -k ../../key/prod-key.cer -h startup.saveduck.click -s startup 
+./deployService.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup 
 '''
 
 ## Other Notes
