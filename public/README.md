@@ -65,30 +65,30 @@ How I will be using each of the required technologies:
 - **Static middleware for frontend** - done! Also found in index.js.
 
 ## DB/Login deliverable
-➡️For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
+➡️For this deliverable I associate the saved # of ducks with the logged in user. I stored the score in the database.
 
 - **MongoDB Atlas database created** - done!
 - **Stores data in MongoDB** - done!
 - **User registration** - Creates a new account in the database.
-- **existing user** - Stores the votes under the same user if the user already exists.
-- **Use MongoDB to store credentials** - Stores both user and their votes.
-- **Restricts functionality** - You cannot vote until you have logged in. This is restricted on the frontend only.
+- **existing user** - Stores the scores under the same user if the user already exists.
+- **Use MongoDB to store credentials** - Stores both user and their scores.
+- **Restricts functionality** - You cannot plah until you have logged in. This is restricted on the frontend only.
 
 ## WebSocket deliverable
-➡️ For this deliverable I used webSocket to update the votes on the frontend in realtime.
+➡️ For this deliverable I used webSocket to update the scores (ducks saved) on the frontend in realtime.
 
 - **Backend listens for WebSocket connection** - done!
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
-- **WebSocket data displayed** - All user votes display in realtime. I'm really proud that this is working. Way cool!
+- **WebSocket data displayed** - All user scores display in realtime.
 
 ## React deliverable
-➡️ For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+➡️ For this deliverable I converted the application over to use React.
 
 - **Bundled** and transpiled - done!
-- **Components** - Login, voting list, vote are all components.
-- **Router** - Routing between login and voting components.
-- **Hooks** - Vue uses class properties instead of UseState to track changes in vote state.
+- **Components** - Login, are all components.
+- **Router** - Routing between login and scoring components.
+- **Hooks** - UseState to track changes.
 
 ## Notes
 [Notes](startup/notes.md)
