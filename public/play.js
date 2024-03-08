@@ -16,6 +16,19 @@ wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddlin
 "Joyously","Lavender","Necklace","Password","Rainbowy","Sunshine","Template","Wildlife",
 "Hospital","Optimism","Exciting","Mystique","Overcome","Paradise","Quickset","Rainbowy"]
 
+async function sendScores(score) {
+    let scoreToSend = {
+        name: getPlayerName(),
+        score: score,
+    }
+
+    const response = await fetch('/api/score', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(scoreToSend)
+    })
+}
+
 function getPlayerName() {
     return localStorage.getItem('userName') ?? 'Mystery player';
 }
@@ -50,6 +63,7 @@ function addLetter(letter, elemendID) {
         if (isGameOver()) {
             totalScore += 1;
             saveScore(totalScore);
+            sendScores(totalScore);
         }
     }
     // greying out button color if incorrect letter choice

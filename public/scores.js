@@ -34,7 +34,7 @@
 //   }
   
 async function loadScores() {
-  const responce = await fetch("/api/scores");
+  const response = await fetch("/api/scores");
   const scores = await response.json();
 
   // Modify DOM

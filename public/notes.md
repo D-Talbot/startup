@@ -43,7 +43,7 @@ chmod +x deployFiles.sh
 
 - Startup Https / Back End
 '''
-sudo ./deployFiles.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
+sudo ./deployService.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
 chmod +x deployService.sh
 ./deployService.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup 
 '''

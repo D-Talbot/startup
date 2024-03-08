@@ -58,11 +58,11 @@ How I will be using each of the required technologies:
 ## Service deliverable
 ➡️ For this deliverable I added backend endpoints that receives.. and returns.
 
-- **Node.js/Express HTTP service** - done!
-- **Calls to third party endpoints** - done!
+- **Node.js/Express HTTP service** - done! Can be found in my index.js file :)
+- **Calls to third party endpoints** - done! I have a random photo display on the About page. 
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for getting/updating the scoreboard.
 - **Frontend calls service endpoints** - I did this using the fetch function.
-- **Static middleware for frontend** - done!
+- **Static middleware for frontend** - done! Also found in index.js.
 
 ## DB/Login deliverable
 ➡️For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
