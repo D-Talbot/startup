@@ -1,6 +1,7 @@
 // Required modules and initialization
 let scores = [];
 const express = require('express');
+const multer = require('multer');
 const app = express();
 
 // The service port. In production the frontend code is statically hosted by the service on the same port.
