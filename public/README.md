@@ -67,12 +67,12 @@ How I will be using each of the required technologies:
 ## DB/Login deliverable
 ➡️For this deliverable I associate the saved # of ducks with the logged in user. I stored the score in the database.
 
-- **MongoDB Atlas database created** - done!
-- **Stores data in MongoDB** - done!
-- **User registration** - Creates a new account in the database.
-- **existing user** - Stores the scores under the same user if the user already exists.
-- **Use MongoDB to store credentials** - Stores both user and their scores.
-- **Restricts functionality** - You cannot plah until you have logged in. This is restricted on the frontend only.
+- **MongoDB Atlas database created** - complete!
+- **Stores Application Data in MongoDB** - done!
+- **New User Registration** - Creates a new account in the database.
+- **Existing User Registration** - Stores the scores under the same user if the user already exists.
+- **Use MongoDB to Store/Retrieve Credentials** - Stores both user and their scores.
+- **Restricts Functionality** - You cannot play until you have logged in. This is restricted on the frontend only.
 
 ## WebSocket deliverable
 ➡️ For this deliverable I used webSocket to update the scores (ducks saved) on the frontend in realtime.

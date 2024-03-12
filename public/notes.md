@@ -29,7 +29,7 @@ chmod +x deployFiles.sh
 
 - Simon Https / Back End
 '''
-sudo ./deployFiles.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
+sudo ./deployService.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
 chmod +x deployService.sh
 ./deployService.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon 
 '''
