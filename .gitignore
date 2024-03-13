@@ -3,3 +3,6 @@
 node_modules/
 dist/
 dbConfig.json
+cookie.txt
+database.js
+dbkeys.sh
