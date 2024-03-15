@@ -7,13 +7,12 @@
     <title>SaveDuck</title>
     <link rel="icon" href="rubduck.png"/>
 
-    <script src="login.js"></script>
     <link rel="stylesheet" href="styles.css"/>
-
-    <!--bootstrap!-->
+    <!--bootstrap for css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"
     />
+
 </head>
 <body class="bg-dark text-light">
     <header class="container-fluid" style="display: flex; flex-direction: row;">
@@ -40,14 +39,14 @@
                 <!-- Displayed when needing authentication -->
                 <div id="loginControls" style="display: none"></div>
                     <div class="mb-3">
-                        <form method="get" action="play.html">
+                        <form method="get">
                             <label for="username" class="form-label">Username: </label>
                             <input type="text" class="form-control" style="margin-bottom: 10px" id="username" placeholder="Your username"/>
                             <label for="password" class="form-label">Password: </label>
                             <input type="text" class="form-control" id="password" placeholder="Your password"/>
                             <div>
-                                <button class="button-primary" type="submit" onclick="loginUser()">Login</button>
-                                <button class="button-primary" type="submit" onclick="createUser()">Create Account</button>
+                                <button class="button-primary" type="button" onclick="loginUser()">Login</button>
+                                <button class="button-primary" type="button" onclick="createUser()">Create Account</button>
                             </div>
                         </form>
                     </div>
@@ -63,15 +62,14 @@
                 <!-- Error dialog -->
                 <div class="modal fade" id="msgModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content text-dark">
-                        <div class="modal-body">error message here</div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div class="modal-content text-dark">
+                            <div class="modal-body">ERROR</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                         </div>
                     </div>
-                    </div>
                 </div>   
-                
         </div>
     </main>
     <footer class="modal-footer">
@@ -80,5 +78,13 @@
             <span>Author: Danica Talbot</span>
         </div>
     </footer>
+    <!--bootstrap for javascript-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="login.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -121,28 +121,3 @@ function setAuthCookie(res, authToken) {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-// function updateScores(userName, score) {
-//   const date = new Date().toLocaleDateString(); // Get the current date
-//   const newScore = { name: userName.name, score: userName.score, date: date }; // Create a new score object with name, score, and date
-
-//   let found = false;
-//   console.log(scores);
-//   for (const [i, prevScore] of scores.entries()) { // Iterate through the existing scores
-//     if (score > prevScore.score) { 
-//       scores.splice(i, 0, newScore); // Insert the new score at the appropriate position in the array
-//       found = true;
-//       break;
-//     }
-//   }
-
-//   if (!found) {
-//     scores.push(newScore); // If the new score wasn't greater than any existing score, add it to the end of the array
-//   }
-
-//   if (scores.length > 10) { // Keep only the top 10 scores
-//     scores.length = 10;
-//   }
-
-//   return scores;
-// }

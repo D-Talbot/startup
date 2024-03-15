@@ -46,7 +46,7 @@ function addScore(score) {
 }
 
 function getHighScores() {
-  const query = { score: { $gt: 0, $lt: 900 } };
+  const query = { score: { $gt: 0, $lt: 100 } };
   const options = {
     sort: { score: -1 },
     limit: 10,
