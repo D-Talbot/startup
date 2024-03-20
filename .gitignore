@@ -6,3 +6,7 @@ main.js
 dbConfig.json
 cookie.txt
 dbkeys.sh
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

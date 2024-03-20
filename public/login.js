@@ -21,6 +21,10 @@ loginOrCreate(`/api/auth/create`);
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#username')?.value;
   const password = document.querySelector('#password')?.value;
+  if (password == '' || userName == ''){
+    return 1;
+  }
+
   const response = await fetch(endpoint, {
     method: 'post',
     body: JSON.stringify({ email: userName, password: password }),
@@ -46,7 +50,7 @@ function play() {
 }
 
 function logout() {
-  localStorage.removeItem('username');
+  localStorage.removeItem('userName');
   fetch(`/api/auth/logout`, {
     method: 'delete',
   }).then(() => (window.location.href = '/'));

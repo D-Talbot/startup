@@ -35,9 +35,9 @@
         <img src="duck2.png" alt="duck" width="200">
         <div>
             <h2>Are you ready to save some ducks?</h1>
-                <p>Login now to start rescuing!</p>
                 <!-- Displayed when needing authentication -->
-                <div id="loginControls" style="display: none"></div>
+                <div id="loginControls" style="display: none">
+                    <p>Login now to start rescuing!</p>
                     <div class="mb-3">
                         <form method="get">
                             <label for="username" class="form-label">Username: </label>
@@ -54,8 +54,8 @@
                 <!-- Displayed when ready to play -->
                 <div id="playControls" style="display: none">
                     <div id="playerName"></div>
-                    <button type="button" class="btn btn-primary" onclick="play()">Play</button>
-                    <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+                    <p>-> Start rescuing ASAP!</p>
+                    <button type="button" class="button-primary" onclick="logout()">Logout</button>
                   </div>
                 </div>
 

@@ -53,7 +53,7 @@ apiRouter.post('/auth/login', async (req, res) => {
       return;
     }
   }
-  res.status(401).send({ msg: 'Unauthorized' });
+  res.status(401).send({ msg: 'Unauthorized: Are both your password and username correct?' });
 });
 
 // DeleteAuth token if stored in cookie
@@ -83,17 +83,17 @@ secureApiRouter.use(async (req, res, next) => {
   if (user) {
     next();
   } else {
-    res.status(401).send({ msg: 'Unauthorized' });
+    res.status(401).send({ msg: 'Unauthorized: Double check your username/password.' });
   }
 });
 
 // GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+secureApiRouter.get('/scores', async (_req, res) => {
+  res.send(await DB.getHighScores());
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
+secureApiRouter.post('/score', (req, res) => {
   scores = updateScores(req.body);
   res.send(scores);
 });
@@ -121,3 +121,8 @@ function setAuthCookie(res, authToken) {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+function updateScores(score){
+  DB.addScore(score);
+  return DB.getHighScores();
+}

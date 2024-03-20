@@ -21,12 +21,6 @@ async function sendScores(score) {
         name: getPlayerName(),
         score: score,
     }
-
-    const response = await fetch('/api/score', {
-        method: 'POST',
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify(scoreToSend)
-    })
 }
 
 function getPlayerName() {
@@ -63,7 +57,9 @@ function addLetter(letter, elemendID) {
         if (isGameOver()) {
             totalScore += 1;
             saveScore(totalScore);
+            console.log("Play: saved the scores");
             sendScores(totalScore);
+            console.log(`Play: sent the scores. Total Score:${totalScore}.`)
         }
     }
     // greying out button color if incorrect letter choice
@@ -86,6 +82,7 @@ function initializeGame() {
 function updateScore(score) {
     const scoreEl = document.querySelector('#score');
     scoreEl.textContent = score;
+    console.log("updateScores just finished.");
 }
 
 function updateScores(userName, score, scores) {
