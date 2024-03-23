@@ -119,7 +119,7 @@ function setAuthCookie(res, authToken) {
 }
 
 // Start the server and listen on the specified port
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 

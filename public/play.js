@@ -212,13 +212,7 @@ window.onload = () => {
     initializeGame();
     displayPlayerName();
     
-    // psuedo websocket data
-    setInterval(() => {
-    const ducksSaved = Math.floor(Math.random() * 10); // Generate a random number of ducks saved
-    const chatText = document.querySelector('#player-messages');
-    chatText.innerHTML =
-        `<div class="event"><span class="player-event">Danica</span> has saved ${ducksSaved} duck(s)</div>` + chatText.innerHTML;
-    }, 5000);
+  // const chatText = document.querySelector('#player-messages');
 
 }
 
