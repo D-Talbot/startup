@@ -78,6 +78,7 @@ How I will be using each of the required technologies:
 ➡️ For this deliverable I used webSocket to update the scores (ducks saved) on the frontend in realtime.
 
 - **Backend listens for WebSocket connection** - done!
+- **Simon Websocket Deliverable Deployed** - done!
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - All user scores display in realtime.
