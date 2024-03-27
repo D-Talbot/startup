@@ -81,7 +81,7 @@ How I will be using each of the required technologies:
 - **Simon Websocket Deliverable Deployed** - done!
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
-- **WebSocket data displayed** - All user scores display in realtime.
+- **WebSocket data displayed** - Duck rescued display in realtime.
 
 ## React deliverable
 ➡️ For this deliverable I converted the application over to use React.

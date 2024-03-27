@@ -1,4 +1,6 @@
 // Event messages
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 const GameEndEvent = 'gameEnd';
 const GameStartEvent = 'gameStart';
 
@@ -23,6 +25,7 @@ wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddlin
 async function sendScores(score) {
     let scoreToSend = {
         name: getPlayerName(),
+        socket : socket,
         score: score,
     }
 }
@@ -62,6 +65,7 @@ function addLetter(letter, elemendID) {
             totalScore += 1;
             saveScore(totalScore);
             sendScores(totalScore);
+            broadcastEvent(getPlayerName(), GameEndEvent, {});
         }
     }
     // greying out button color if incorrect letter choice
@@ -158,62 +162,61 @@ async function saveScore(score) {
     localStorage.setItem('scores', JSON.stringify(scores));
   }
 
-    // Functionality for peer communication using WebSocket
+  // Functionality for peer communication using WebSocket
 
-    function configureWebSocket() {
-      const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-      this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-      this.socket.onopen = (event) => {
-        this.displayMsg('system', 'game', 'connected');
-      };
-      this.socket.onclose = (event) => {
-        this.displayMsg('system', 'game', 'disconnected');
-      };
-      this.socket.onmessage = async (event) => {
-        const msg = JSON.parse(await event.data.text());
-        if (msg.type === GameEndEvent) {
-          this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
-        } else if (msg.type === GameStartEvent) {
-          this.displayMsg('player', msg.from, `started a new game`);
-        }
-      };
-    }
-  
-    function displayMsg(cls, from, msg) {
-      const chatText = document.querySelector('#player-messages');
-      chatText.innerHTML =
-        `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
-    }
-  
-    function broadcastEvent(from, type, value) {
-      const event = {
-        from: from,
-        type: type,
-        value: value,
-      };
-      this.socket.send(JSON.stringify(event));
-    }
+  function configureWebSocket() {
+    socket.onopen = (event) => {
+      displayMsg('system', 'game', 'connected');
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'game', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === GameEndEvent) {
+        displayMsg('player', msg.from, `saved a duck!`);
+      } else if (msg.type === GameStartEvent) {
+        displayMsg('player', msg.from, `started a new game`);
+      }
+    };
+  }
 
+  function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  function broadcastEvent(from, type, value, score) {
+    const event = {
+      from: from,
+      type: type,
+      score: score,
+      value: value,
+    };
+    socket.send(JSON.stringify(event));
+  }
+
+  // reset game (if pressed) -> choose new word clear board
 function reset() {
-    const wordDisplay = document.getElementById('underscores');
-    hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
-    wordDisplay.textContent = hiddenWord.join(' ');
-    initializeGame();
-    Array.from(document.getElementById('buttons').children).forEach(element => {
-        element.classList.remove('failure');
-        element.classList.remove('success');
-    // Let other players know a new game has started
-    broadcastEvent(getPlayerName(), GameStartEvent, {});
-    });
+  const wordDisplay = document.getElementById('underscores');
+  hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
+  wordDisplay.textContent = hiddenWord.join(' ');
+  initializeGame();
+  Array.from(document.getElementById('buttons').children).forEach(element => {
+      element.classList.remove('failure');
+      element.classList.remove('success');
+  });
+  // Let other players know a new game has started
+  broadcastEvent(getPlayerName(), GameStartEvent, {});
 }
 
 // main -> function calls
 window.onload = () => {
-    initializeGame();
-    displayPlayerName();
-    
-  // const chatText = document.querySelector('#player-messages');
+  initializeGame();
+  displayPlayerName();
+  configureWebSocket();
+  
+// const chatText = document.querySelector('#player-messages');
 
 }
-
-// reset game (if pressed) -> choose new word clear board
