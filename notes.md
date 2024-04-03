@@ -43,10 +43,25 @@ chmod +x deployFiles.sh
 
 - Startup Https / Back End
 '''
-sudo ./deployService.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
+sudo ./deployService.sh -k ~/key/prod-key.cer -h startup.saveduck.click -s startup
 chmod +x deployService.sh
 ./deployService.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup 
 '''
+
+- Startup React 
+'''
+sudo ./deployReact.sh -k ~/key/prod-key.cer -h startup.saveduck.click -s startup
+chmod +x ./deployReact.sh
+./deployReact.sh -k ../key/prod-key.cer -h startup.saveduck.click -s startup
+'''
+
+- Simon React
+'''
+sudo ./deployReact.sh -k ~/key/prod-key.cer -h simon.saveduck.click -s simon
+chmod +x ./deployReact.sh
+./deployReact.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
+'''
+
 
 ## Other Notes
 [other page](startup/notes2.md)
