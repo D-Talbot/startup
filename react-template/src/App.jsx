@@ -6,9 +6,14 @@ import { Login } from './login/login';
 import { Play } from './play/play';
 import { Scores } from './scores/scores';
 import { About } from './about/about';
+import { AuthState } from './login/authState';
 import rubberduck from '../public/rubduck.png';
 
 function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
+
     return (
         <BrowserRouter>
             <div className="top bg-dark text-light" style={{maxWidth: '100%', overflowX: 'none'}}>
@@ -25,16 +30,20 @@ function App() {
                             Home
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" to="play">
+                    {authState === AuthState.Authenticated && (
+                        <li className='nav-item'>
+                        <NavLink className='nav-link' to='play'>
                             Play
-                            </NavLink>
+                        </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="scores">
-                            Score Board
-                            </NavLink>
+                    )}
+                    {authState === AuthState.Authenticated && (
+                        <li className='nav-item'>
+                        <NavLink className='nav-link' to='scores'>
+                            Scores
+                        </NavLink>
                         </li>
+                    )}
                         <li className="nav-item">
                             <NavLink className="nav-link" to="about">
                                 About
@@ -45,7 +54,20 @@ function App() {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={<Login />} exact />
+                    <Route
+                        path='/'
+                        element={
+                        <Login
+                            userName={userName}
+                            authState={authState}
+                            onAuthChange={(userName, authState) => {
+                            setAuthState(authState);
+                            setUserName(userName);
+                            }}
+                        />
+                        }
+                        exact
+                    />
                     <Route path='/play' element={<Play />} />
                     <Route path='/scores' element={<Scores />} />
                     <Route path='/about' element={<About />} />
