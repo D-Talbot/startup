@@ -60,6 +60,10 @@ chmod +x ./deployReact.sh
 sudo ./deployReact.sh -k ~/key/prod-key.cer -h simon.saveduck.click -s simon
 chmod +x ./deployReact.sh
 ./deployReact.sh -k ../key/prod-key.cer -h simon.saveduck.click -s simon
+
+
+ ssh -i ../key/prod-key.cer ubuntu@saveduck.click 
+ ls cd services
 '''
 
 

@@ -6,18 +6,18 @@ import { Login } from './login/login';
 import { Play } from './play/play';
 import { Scores } from './scores/scores';
 import { About } from './about/about';
-
+import rubberduck from '../public/rubduck.png';
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="top bg-dark text-light" style="max-width: 100%; overflow-x: none;">
-                <header className="container-fluid" style="display: flex; flex-direction: row;">
-                    <nav className="navbar navbar-dark" style="display: flex; flex-direction: row;">
-                        <NavLink to="index" id="duck-brand" style="text-decoration: none; display: flex; justify-content: center; 
-                        align-items: center; padding: 10px;">
-                            <h1 style="font-size: 28px;" className="navbar-brand">SaveDuck</h1>
-                            <img src="rubduck.png" alt="rubber duck" width="33" style="padding-top: 10px;"/>
+            <div className="top bg-dark text-light" style={{maxWidth: '100%', overflowX: 'none'}}>
+                <header className="container-fluid" style={{display: 'flex', flexDirection: 'row'}}>
+                    <nav className="navbar navbar-dark" style={{display: 'flex', flexDirection: 'row'}}>
+                        <NavLink to="" id="duck-brand" style={{textDecoration: 'none', display: 'flex', justifyContent: 'center', 
+                        alignItems: 'center', padding: '10px'}}>
+                            <h1 style={{fontSize: '28px'}} className="navbar-brand">SaveDuck</h1>
+                            <img src={rubberduck} alt="rubber duck" width="33" style={{paddingTop: '10px'}}/>
                         </NavLink>
                     <menu className="navbar-nav">
                         <li className="nav-item">
@@ -54,8 +54,9 @@ function App() {
 
                 <footer className="modal-footer">
                     <div className="container-fluid">
-                        <NavLink href="https://github.com/D-Talbot/startup" Github Startup Repo>
-                        </NavLink>
+                        <a href="https://github.com/D-Talbot/startup">
+                        Github Savduck Repo
+                        </a>
                         <span>Author: Danica Talbot</span>
                     </div>
                 </footer>
