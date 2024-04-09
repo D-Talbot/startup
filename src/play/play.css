@@ -1,0 +1,147 @@
+main {
+    background-color: #85b6cd;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: none;
+}
+
+.play-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.left-side {
+    grid-column: 1;
+    grid-area: 1 / 1 / 2 / 2;
+    margin-bottom: -240px;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#buttons button {
+    margin-top: 20px;
+    height: 45px;
+    width: 45px;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    padding-top: 10px;
+    margin-right: 5px;
+    border: transparent;
+    color: white;
+    border-radius: 10px;
+}
+
+#player-messages {
+    padding-left: 100px;
+}
+
+.event {
+    color:rgb(255, 255, 255);
+}
+
+#buttons button:hover {
+    background-color: rgb(208, 184, 96);
+    color: white;
+    text-decoration: none;
+  }
+
+.success {
+    background-color: rgb(51, 170, 65) !important;
+}
+
+.failure {
+    background-color: rgb(161, 151, 151) !important;
+}
+
+#underscores {
+    grid-column: 2;
+    margin-top: 230px;
+    grid-area: 2 / 1 / 3 / 2;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.right-side {
+    grid-column: 3;
+    grid-area: 3 / 1 / 4 / 2;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.block {
+    display: flex;
+    padding-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.block p {
+    width: 45%;
+    padding-left: 30px;
+}
+
+.block label {
+    width: 30%;
+}
+
+.block input {
+    width: 8.2%;
+    margin-left: -40px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-side button {
+    margin-top: 20px;
+    height: 45px;
+    width: 45px;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    padding-top: 10px;
+    margin-right: 5px;
+    border: transparent;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(57, 57, 56);
+    color: white;
+    text-decoration: none;
+  }
+
+  @media screen and (width: 800px) {
+    header {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    main {
+        flex: 1 100vh;
+    }
+    .play-content {
+        flex-direction: column;
+        /* border-color: red; */
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+    }
+}
