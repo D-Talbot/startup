@@ -4,201 +4,204 @@ import './play.css';
 import hang2 from '../../public/hang2.png';
 
 export function Play() {
-//     const [playerName, setPlayerName] = React.useState('Mystery Player');
-//     const [wordDisplay, setWordDisplay] = React.useState('');
+    const [playerName, setPlayerName] = React.useState('Mystery Player');
+    const [wordDisplay, setWordDisplay] = React.useState('');
+    const [guessesLeft, setGuessesLeft] = React.useState(9);
 
-//     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-//     const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-//     const GameEndEvent = 'gameEnd';
-//     const GameStartEvent = 'gameStart';
-//     let randomWord;
-//     let totalScore = 0;
-//     let hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    const GameEndEvent = 'gameEnd';
+    const GameStartEvent = 'gameStart';
+    let randomWord;
+    let totalScore = 0;
+    let hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
 
-//     wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddling",
-//     "Flapping","Feathers","Plumages","Nestling","Pintails","Paddling","Waterfow","Feasting",
-//     "Dabbling","Gadwalls","Migrator","Duckweed","Brooding","Plucking","Sculling","Billings",
-//     "Shelduck","Tealduck","Gaggling","Duckboat","Mudflats","Downhill","Mallardy","Pintails",
-//     "Swansong","Whistler","Ductwork","Flighted","Redheads","Surfaced","Cacklers","Poaching",
-//     "Quackers","Shoveler","Pinioned","Flocking","Plucking","Migrates","Preening","Feathers",
-//     "Bluebill","Flocking","Cloudbed","Evermore","Fireball","Grateful","Highrise","Moonwalk",
-//     "Tranquil","Upstream","Wonderer","Ambition","Infinity","Universe","Atlantis","Luminary",
-//     "Patience","Serenity","Thriller","Zenithal","Catalyst","Dazzling","Spirited","Creative",
-//     "Flourish","Pleasure","Sparking","Dreaming","Inspired","Joyously","Loveable","Momentum",
-//     "Pleasure","Tranquil","Airplane","Birthday","Campaign","Deadline","Elephant","Football",
-//     "Joyously","Lavender","Necklace","Password","Rainbowy","Sunshine","Template","Wildlife",
-//     "Hospital","Optimism","Exciting","Mystique","Overcome","Paradise","Quickset","Rainbowy"]
+    const wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddling",
+    "Flapping","Feathers","Plumages","Nestling","Pintails","Paddling","Waterfow","Feasting",
+    "Dabbling","Gadwalls","Migrator","Duckweed","Brooding","Plucking","Sculling","Billings",
+    "Shelduck","Tealduck","Gaggling","Duckboat","Mudflats","Downhill","Mallardy","Pintails",
+    "Swansong","Whistler","Ductwork","Flighted","Redheads","Surfaced","Cacklers","Poaching",
+    "Quackers","Shoveler","Pinioned","Flocking","Plucking","Migrates","Preening","Feathers",
+    "Bluebill","Flocking","Cloudbed","Evermore","Fireball","Grateful","Highrise","Moonwalk",
+    "Tranquil","Upstream","Wonderer","Ambition","Infinity","Universe","Atlantis","Luminary",
+    "Patience","Serenity","Thriller","Zenithal","Catalyst","Dazzling","Spirited","Creative",
+    "Flourish","Pleasure","Sparking","Dreaming","Inspired","Joyously","Loveable","Momentum",
+    "Pleasure","Tranquil","Airplane","Birthday","Campaign","Deadline","Elephant","Football",
+    "Joyously","Lavender","Necklace","Password","Rainbowy","Sunshine","Template","Wildlife",
+    "Hospital","Optimism","Exciting","Mystique","Overcome","Paradise","Quickset","Rainbowy"]
     
-//     React.useEffect(() => {
-//         initializeGame();
-//         displayPlayerName();
-//         configureWebSocket();
-//     },[])
+    React.useEffect(() => {
+        initializeGame();
+        displayPlayerName();
+        configureWebSocket();
+    },[])
 
-//     function getPlayerName() {
-//         return localStorage.getItem('userName') ?? 'Mystery player';
-//     }
+    function getPlayerName() {
+        return localStorage.getItem('userName') ?? 'Mystery player';
+    }
 
-//     // pull username
-//     function displayPlayerName() {
-//         setPlayerName(getPlayerName());
-//     }
+    // pull username
+    function displayPlayerName() {
+        setPlayerName(getPlayerName());
+    }
 
-//     function initializeGame() {
-//         guessesLeft = 9;
-//         // randomize word chosen 
-//         randomIndex = Math.floor(Math.random() * wordArray.length);
-//         randomWord = wordArray[randomIndex];
-//         setWordDisplay(wordDisplay);
-//     }
+    function initializeGame() {
+        setGuessesLeft(9);
+        // randomize word chosen 
+        const randomIndex = Math.floor(Math.random() * wordArray.length);
+        randomWord = wordArray[randomIndex];
+        setWordDisplay(wordDisplay);
+    }
 
-//     function isGameOver() {
-//         return !hiddenWord.includes('_');
-//     }
+    function isGameOver() {
+        return !hiddenWord.includes('_');
+    }
 
-//     async function sendScores(score) {
-//         let scoreToSend = {
-//             name: getPlayerName(),
-//             socket : socket,
-//             score: score,
-//         }
-//     }
+    async function sendScores(score) {
+        let scoreToSend = {
+            name: getPlayerName(),
+            socket : socket,
+            score: score,
+        }
+    }
 
-//     // logic for displaying letter once correct one is chosen
-//     function addLetter(letter, elemendID) {
-//         // is the letter in the word? 
-//         if (guessesLeft <= 0){
-//             return;
-//         }
-//         if (randomWord.toLowerCase().includes(letter.toLowerCase())) {
-//             document.getElementById(elemendID).classList.add('success');
-//             // Unveil the letter in the hidden word
-//             for (let i = 0; i < randomWord.length; i++) {
-//                 if (randomWord.toLowerCase()[i] === letter.toLowerCase()) {
-//                     hiddenWord[i] = letter.toLowerCase();
-//                 }
-//             }
-//             const wordDisplay = document.getElementById('underscores');
-//             wordDisplay.textContent = hiddenWord.join(' ');
-//             if (isGameOver()) {
-//                 totalScore += 1;
-//                 saveScore(totalScore);
-//                 sendScores(totalScore);
-//                 broadcastEvent(getPlayerName(), GameEndEvent, {});
-//             }
-//         }
-//         // greying out button color if incorrect letter choice
-//         // decrease the guesses left value 
-//         else {
-//             document.getElementById(elemendID).classList.add('failure');
-//             guessesLeft -= 1;
-//             document.getElementById('count').value = guessesLeft;
-//         }
-//     }
+    // logic for displaying letter once correct one is chosen
+    function addLetter(letter, elemendID) {
+        // is the letter in the word? 
+        if (guessesLeft <= 0){
+            return;
+        }
+
+        const lowerCaseLetter = letter.toLowerCase(); // Convert letter to lowercase
+
+        if (randomWord.toLowerCase().includes(lowerCaseLetter)) {
+            document.getElementById(elemendID).classList.add('success');
+            // Unveil the letter in the hidden word
+            for (let i = 0; i < randomWord.length; i++) {
+                if (randomWord.toLowerCase()[i] === lowerCaseLetter) {
+                    hiddenWord[i] = lowerCaseLetter;
+                }
+            }
+            const wordDisplay = document.getElementById('underscores');
+            wordDisplay.textContent = hiddenWord.join(' ');
+            if (isGameOver()) {
+                totalScore += 1;
+                saveScore(totalScore);
+                sendScores(totalScore);
+                broadcastEvent(getPlayerName(), GameEndEvent, {});
+            }
+        }
+        // greying out button color if incorrect letter choice
+        // decrease the guesses left value 
+        else {
+            document.getElementById(elemendID).classList.add('failure');
+            setGuessesLeft(guessesLeft - 1);
+        }
+    }
 
 
-//   function configureWebSocket() {
-//     socket.onopen = (event) => {
-//       displayMsg('system', 'game', 'connected');
-//     };
-//     socket.onclose = (event) => {
-//       displayMsg('system', 'game', 'disconnected');
-//     };
-//     socket.onmessage = async (event) => {
-//       const msg = JSON.parse(await event.data.text());
-//       if (msg.type === GameEndEvent) {
-//         displayMsg('player', msg.from, `saved a duck!`);
-//       } else if (msg.type === GameStartEvent) {
-//         displayMsg('player', msg.from, `started a new game`);
-//       }
-//     };
-//   }
+  function configureWebSocket() {
+    socket.onopen = (event) => {
+      displayMsg('system', 'game', 'connected');
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'game', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === GameEndEvent) {
+        displayMsg('player', msg.from, `saved a duck!`);
+      } else if (msg.type === GameStartEvent) {
+        displayMsg('player', msg.from, `started a new game`);
+      }
+    };
+  }
 
-//   function displayMsg(cls, from, msg) {
-//     const chatText = document.querySelector('#player-messages');
-//     chatText.innerHTML =
-//       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
-//   }
+  function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
 
-//   function broadcastEvent(from, type, value, score) {
-//     const event = {
-//       from: from,
-//       type: type,
-//       score: score,
-//       value: value,
-//     };
-//     socket.send(JSON.stringify(event));
-//   }
+  function broadcastEvent(from, type, value, score) {
+    const event = {
+      from: from,
+      type: type,
+      score: score,
+      value: value,
+    };
+    socket.send(JSON.stringify(event));
+  }
 
-//   async function saveScore(score) {
-//     const date = new Date().toLocaleDateString();
-//     const newScore = { name: userName, score: score, date: date };
+  async function saveScore(score) {
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
 
-//     try {
-//       const response = await fetch('/api/score', {
-//         method: 'POST',
-//         headers: { 'content-type': 'application/json' },
-//         body: JSON.stringify(newScore),
-//       });
+    try {
+      const response = await fetch('/api/score', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(newScore),
+      });
 
-//       // Let other players know the game has concluded
-//       GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+      // Let other players know the game has concluded
+      GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
 
-//       // Store what the service gave us as the high scores
-//       const scores = await response.json();
-//       localStorage.setItem('scores', JSON.stringify(scores));
-//     } catch {
-//       // If there was an error then just track scores locally
-//       updateScoresLocal(newScore);
-//     }
-//   }
+      // Store what the service gave us as the high scores
+      const scores = await response.json();
+      localStorage.setItem('scores', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just track scores locally
+      updateScoresLocal(newScore);
+    }
+  }
 
-//   function updateScoresLocal(newScore) {
-//     let scores = [];
-//     const scoresText = localStorage.getItem('scores');
-//     if (scoresText) {
-//       scores = JSON.parse(scoresText);
-//     }
+  function updateScoresLocal(newScore) {
+    let scores = [];
+    const scoresText = localStorage.getItem('scores');
+    if (scoresText) {
+      scores = JSON.parse(scoresText);
+    }
 
-//     let found = false;
-//     for (const [i, prevScore] of scores.entries()) {
-//       if (newScore > prevScore.score) {
-//         scores.splice(i, 0, newScore);
-//         found = true;
-//         break;
-//       }
-//     }
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (newScore > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
 
-//     if (!found) {
-//       scores.push(newScore);
-//     }
+    if (!found) {
+      scores.push(newScore);
+    }
 
-//     if (scores.length > 10) {
-//       scores.length = 10;
-//     }
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
 
-//     localStorage.setItem('scores', JSON.stringify(scores));
-//   }
-//     // reset game (if pressed) -> choose new word clear board
-//     function reset() {
-//         const wordDisplay = document.getElementById('underscores');
-//         hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
-//         wordDisplay.textContent = hiddenWord.join(' ');
-//         initializeGame();
-//         Array.from(document.getElementById('buttons').children).forEach(element => {
-//             element.classList.remove('failure');
-//             element.classList.remove('success');
-//         });
-//         // Let other players know a new game has started
-//         broadcastEvent(getPlayerName(), GameStartEvent, {});
-//     }
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }
+    // reset game (if pressed) -> choose new word clear board
+    function reset() {
+        const wordDisplay = document.getElementById('underscores');
+        hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
+        wordDisplay.textContent = hiddenWord.join(' ');
+        initializeGame();
+        Array.from(document.getElementById('buttons').children).forEach(element => {
+            element.classList.remove('failure');
+            element.classList.remove('success');
+        });
+        // Let other players know a new game has started
+        broadcastEvent(getPlayerName(), GameStartEvent, {});
+    }
 
     return (
     <main>
     <div className="block">
         <p className="players">Duck Rescuer: <span id="player-name">{playerName}</span> </p>
-        <label className="form-label" for="count">Guesses Left:</label>
-        <input className="form-control" type="number" id="count" value="9" readonly/>
+        <label className="form-label">Guesses Left:{guessesLeft}</label>
+        <input className="form-control" type="number" id="count" value="9" readOnly/>
         <div id="player-messages"></div>
     </div>
     <div>
