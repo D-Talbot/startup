@@ -41,8 +41,15 @@ async function createUser(email, password) {
   return user;
 }
 
-function addScore(score) {
-  scoreCollection.insertOne(score);
+async function addScore(score) {
+  const query = {date: score.date, name: score.name};
+  const value = await scoreCollection.findOne(query);
+  console.log(value);
+  if (!value){
+    scoreCollection.insertOne(score);
+  }
+  scoreCollection.findOneAndUpdate(query, { $inc: {score: 1}});
+  console.log(score);
 }
 
 async function getHighScores() {

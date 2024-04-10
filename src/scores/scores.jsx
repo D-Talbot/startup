@@ -19,8 +19,8 @@ export function Scores() {
   }, []);
 
   const scoreRows = [];
-  if (scores.length) {
-    for (const [i, score] of score.entries()) {
+  if (scores?.length) {
+    for (const [i, score] of scores?.entries()) {
       scoreRows.push(
         <tr key={i}>
           <td>{i}</td>

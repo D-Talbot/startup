@@ -7,14 +7,13 @@ export function Play() {
     const [playerName, setPlayerName] = React.useState('Mystery Player');
     const [wordDisplay, setWordDisplay] = React.useState('');
     const [guessesLeft, setGuessesLeft] = React.useState(9);
+    const [randomWord, setRandomWord] = React.useState('');
+    const [hiddenWord, setHiddenWord] = React.useState(['_', '_', '_', '_', '_', '_', '_', '_']);
 
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     const GameEndEvent = 'gameEnd';
     const GameStartEvent = 'gameStart';
-    let randomWord;
-    let totalScore = 0;
-    let hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
 
     const wordArray = ["Mallards", "Puddling","Duckling", "Preening", "Quacking", "Waddling",
     "Flapping","Feathers","Plumages","Nestling","Pintails","Paddling","Waterfow","Feasting",
@@ -49,7 +48,7 @@ export function Play() {
         setGuessesLeft(9);
         // randomize word chosen 
         const randomIndex = Math.floor(Math.random() * wordArray.length);
-        randomWord = wordArray[randomIndex];
+        setRandomWord(wordArray[randomIndex]);
         setWordDisplay(wordDisplay);
     }
 
@@ -72,22 +71,22 @@ export function Play() {
             return;
         }
 
-        const lowerCaseLetter = letter.toLowerCase(); // Convert letter to lowercase
+        const lowerCaseLetter = letter?.toLowerCase(); // Convert letter to lowercase
 
-        if (randomWord.toLowerCase().includes(lowerCaseLetter)) {
+        if (randomWord?.toLowerCase().includes(lowerCaseLetter)) {
             document.getElementById(elemendID).classList.add('success');
             // Unveil the letter in the hidden word
             for (let i = 0; i < randomWord.length; i++) {
-                if (randomWord.toLowerCase()[i] === lowerCaseLetter) {
+                if (randomWord?.toLowerCase()[i] === lowerCaseLetter) {
                     hiddenWord[i] = lowerCaseLetter;
                 }
             }
             const wordDisplay = document.getElementById('underscores');
             wordDisplay.textContent = hiddenWord.join(' ');
+            setWordDisplay(wordDisplay);
             if (isGameOver()) {
-                totalScore += 1;
-                saveScore(totalScore);
-                sendScores(totalScore);
+                saveScore(0);
+                sendScores(0);
                 broadcastEvent(getPlayerName(), GameEndEvent, {});
             }
         }
@@ -135,6 +134,7 @@ export function Play() {
 
   async function saveScore(score) {
     const date = new Date().toLocaleDateString();
+    const userName = getPlayerName();
     const newScore = { name: userName, score: score, date: date };
 
     try {
@@ -185,7 +185,7 @@ export function Play() {
     // reset game (if pressed) -> choose new word clear board
     function reset() {
         const wordDisplay = document.getElementById('underscores');
-        hiddenWord = ['_', '_', '_', '_', '_', '_', '_', '_'];
+        setHiddenWord(['_', '_', '_', '_', '_', '_', '_', '_']);
         wordDisplay.textContent = hiddenWord.join(' ');
         initializeGame();
         Array.from(document.getElementById('buttons').children).forEach(element => {
@@ -200,8 +200,8 @@ export function Play() {
     <main>
     <div className="block">
         <p className="players">Duck Rescuer: <span id="player-name">{playerName}</span> </p>
-        <label className="form-label">Guesses Left:{guessesLeft}</label>
-        <input className="form-control" type="number" id="count" value="9" readOnly/>
+        <label className="form-label">Guesses Left:</label>
+        <input className="form-control" type="number" id="count" value={guessesLeft} readOnly/>
         <div id="player-messages"></div>
     </div>
     <div>
