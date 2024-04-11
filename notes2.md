@@ -1,4 +1,4 @@
-# Midterm Study Guide
+# Midterm/Final Study Guide/Cheat Sheet 
 ## Table of Contents
 
 - [Kahoot](#kahoot)
@@ -410,4 +410,541 @@ You can create formatted messages in the log parameter.
 ```javascript
 console.log('hello %s', 'world');
 // OUTPUT: hello world
+
+Sure, here's your provided content converted into Markdown:
+
+```markdown
+# Question 1
+1 / 1 pts
+In the following code, what does the link element do?
+
+```html
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+</head>
+```
+- [ ] Loads a stylesheet from Google to apply styles to <div> tag on the page
+- [ ] Loads a web framework from Google called Arvo that makes it easier to create menus
+- [x] Loads a stylesheet that makes the Google font called Arvo available for use with CSS
+- [ ] Loads Bootstrap so you can use CSS components
+
+# Question 2
+1 / 1 pts
+In the following code, what does a div tag do?
+
+```html
+<body>
+  <h1 class="major">User Comments</h1>
+  <div id="reviews">
+    <div class="review">
+      <p>These pictures are Awesome</p>
+      <p class="author">Frank</p>
+    </div>
+    <div class="review">
+      <p>I want more of these pictures.</p>
+      <p class="author">Martha</p>
+    </div>
+  </div>
+</body>
+```
+- [ ] Creates a rectangular block of content that can be moved anywhere on the page using the div-position tag 
+- [ ] Creates a divider, so that the browser knows how to paginate the HTML document 
+- [x] Creates a division within an HTML document so that you can act upon it with CSS or JavaScript 
+- [ ] Ensures that CSS inside the div applies only to the elements outside the div 
+
+# Question 3
+1 / 1 pts
+In the following code, what is the difference between the #title and .grid selector?
+
+```css
+#title {
+  font-size: 32px;
+}
+
+.grid {
+  font-size: 32px;
+}
+```
+- [ ] #title selects by element name, while .grid selects by element class. 
+- [ ] .grid selects by element ID, while #title selects by element class. 
+- [x] #title selects by element ID, while .grid selects by element class. 
+- [ ] #title selects by element class, while .grid selects by element name. 
+
+# Question 4
+1 / 1 pts
+In the following code, what is the difference between padding and margin?
+
+```css
+.review {
+  padding: 20px;
+  margin: 20px;
+}
+```
+- [ ] The padding controls spacing between elements, whereas the margin controls spacing between the element and the page margins. 
+- [x] The padding applies to spacing between the element and its border. The margin applies to spacing between the border and other adjacent elements. 
+- [ ] The padding controls how the font looks and the margin controls how the spacing looks. 
+- [ ] The padding is white by default, whereas the margin is transparent by default. 
+
+# Question 5
+1 / 1 pts
+Given this HTML
+
+```html
+<div class="box">
+  <img src="https://picsum.photos/200" />
+  <img src="https://picsum.photos/200" />
+  <img src="https://picsum.photos/200" />
+</div>
+```
+and this CSS
+
+```css
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.box img {
+  padding: 10px;
+}
+```
+- [ ] In columns, using a bootstrap grid 
+- [ ] In columns, using a CSS grid 
+- [ ] The images will not be displayed until they are made visible 
+- [x] Horizontally, using CSS flexbox 
+
+# Question 6
+1 / 1 pts
+What does the following CSS do?
+
+```css
+* {
+  padding: 50px;
+}
+```
+- [ ] Places 50 pixels of space only around the entire web page 
+- [ ] Places 50 pixels of space around the <padding> element 
+- [ ] Places 50 pixels of space around newly created elements 
+- [x] Places 50 pixels of space around all elements 
+
+# Question 7
+1 / 1 pts
+What does the following code do?
+
+```javascript
+const f = x => x * x;
+```
+- [ ] Sets "f" to the value of "x" squared
+- [ ] Sets "f" to a function that returns undefined
+- [x] Sets "f" to a function that returns the square of "x"
+- [ ] Sets "f" to the value of "x"
+
+# Question 8
+1 / 1 pts
+What does the following code output?
+
+```javascript
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let b = a.filter(number => {
+  return (number % 2 === 0)
+});
+console.log(b);
+```
+- [x] [ 2, 4, 6, 8, 10 ] 
+- [ ] [ 1, 3, 5, 7, 9 ] 
+- [ ] [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] 
+- [ ] [ 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ] 
+
+# Question 9
+1 / 1 pts
+What does the following code output?
+
+```javascript
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let c = a.reduce((total, number) => {
+  return (total + number)
+});
+console.log(c);
+```
+- [ ] 66 
+- [ ] [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] 
+- [ ] [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] 
+- [x] 55 
+
+# Question 10
+1 / 1 pts
+What does the following code output?
+
+```javascript
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let e = a.map(number => {
+  return (number - 1)
+});
+console.log(e);
+```
+- [ ] [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] 
+- [ ] 45 
+- [ ] [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] 
+- [x] [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ] 
+
+# Question 11
+1 / 1 pts
+What does the following line
+
+ of Javascript do?
+
+```javascript
+document.getElementById('get').addEventListener('click', loadPhoto);
+```
+- [ ] Finds all the elements with the class "get" and calls the "click" event handler for each of them
+- [x] Finds the element with the "get" id and adds a function that will be called if this element is clicked
+- [ ] Finds all the elements with the class "get" and adds a function that will be called if one of these elements is clicked
+- [ ] Finds the element with the "get" id and calls the "click" event handler for this item.
+
+# Question 12
+0 / 1 pts
+What does the following line of Javascript do?
+
+```javascript
+document.querySelector('#results').textContent = info;
+```
+- [ ] Finds the element with the "results" id and stores its text into a variable 
+- [ ] Finds the element with the "results" id and appends new text to it 
+- [ ] Finds the element with the "results" id and deletes it 
+- [x] Finds the element with the "results" id and changes its text 
+
+# Question 13
+1 / 1 pts
+Which of the following are true? (mark all that are true)
+- [x] The DOM is a tree-structured representation of the HTML document used by the browser 
+- [x] JavaScript can modify the DOM 
+- [ ] The DOM contains only form elements and input controls 
+- [ ] The DOM can only be changed by CSS 
+
+# Question 14
+1 / 1 pts
+By default, the HTML span element has a default CSS display property value of:
+- [x] inline 
+- [ ] flex 
+- [ ] grid 
+- [ ] block 
+
+# Question 15
+1 / 1 pts
+How would you use CSS to change all the div elements to have a background color of blue?
+- [ ] #div { background-color: blue; } 
+- [ ] div.all { background-color: blue; } 
+- [x] div { background-color: blue; } 
+- [ ] .div { background-color: blue; } 
+
+# Question 16
+0 / 1 pts
+How would you display an image with a hyperlink in HTML?
+- [ ] <img href="http://xkcd.com/" src="http://imgs.xkcd.com/logo.png" /> 
+- [x] <a href="http://xkcd.com/"><img src="http://imgs.xkcd.com/logo.png" /></a> 
+- [ ] <a src="http://xkcd.com/"><img href="http://imgs.xkcd.com/logo.png" /></a> 
+- [ ] <a link="http://xkcd.com/"><img src="http://imgs.xkcd.com/logo.png" /></a> 
+
+# Question 17
+1 / 1 pts
+In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+- [ ] Margin, border, padding, content 
+- [ ] Padding, border, margin, content 
+- [x] Content, padding, border, margin 
+- [ ] Content, margin, border, padding 
+
+# Question 18
+1 / 1 pts
+Given the following HTML, what CSS would you use to set the text "yes" to green and leave the "no" text unaffected?
+
+```html
+<p>no</p>
+<p class="header">yes</p>
+```
+- [x] p.header { color:green; } 
+- [ ] p:header { color:green; } 
+- [ ] p#header { color:green; } 
+- [ ] p { color:green; } 
+
+# Question 19
+1 / 1 pts
+What will the following code output when executed?
+
+```javascript
+for (let i = 3; i > 0; i--) {
+ console.log(i);
+}
+```
+- [ ] 2 1 
+- [ ] 3 2 1 0 
+- [ ] 2 1 0 
+- [x] 3 2 1 
+
+# Question 20
+0 / 1 pts
+How would you use JavaScript to select an element with the id of “header” and change the text color of that element to red?
+- [ ] document.getElementById('header').color = 'red'; 
+- [x] document.getElementById('header').style.color = 'red'; 
+- [ ] document.getElementsByTag(‘p #header’)[0].style.color = 'red'; 
+- [ ] document.getElementById('.header').style.color = 'red'; 
+
+# Question 21
+1 / 1 pts
+What is the opening HTML tag for a paragraph?
+- [x] <p> 
+
+# Question 22
+1 / 1 pts
+What is the closing HTML tag for a paragraph?
+- [x] </p> 
+
+# Question 23
+0 / 1 pts
+What is the opening HTML tag for an ordered list?
+- [ ] <ul> 
+- [ ] <p> 
+- [x] <li> 
+
+# Question 24
+1 / 1 pts
+What is the opening HTML tag for a second-level heading?
+- [ ] <h level="2"> 
+- [x] <h2> 
+
+# Question 25
+1 / 1 pts
+What does the following HTML do?
+
+```html
+<!DOCTYPE html>
+```
+- [ ] Creates the HTML DOM element 
+- [x] Directs the browser to use relevant specifications when rendering the HTML 
+- [ ] Comments out the following HTML 
+- [ ] Specifies the file to not be HTML 
+
+# Question 26
+1 / 1 pts
+What is valid syntax for a JavaScript if statement?
+- [ ] if (i = 10) 
+- [ ] if i === 10 
+- [x] if (i === 10) 
+- [ ] if (var i === 10) 
+
+# Question 27
+0.33 / 1 pts
+Which of the following are valid syntax for creating a function in JavaScript?
+- [x] function f(x) { } 
+- [ ] const function f(x) = { } 
+- [x] let execute = (x) => { } 
+- [ ] const f = function(x) = { } 
+
+# Question 28
+1 / 1 pts
+What is the correct syntax for creating a javascript object?
+
+```javascript
+let o = { number: 1, value: "carrot", features: ['orange', 'root']};
+```
+- [ ] let o = { number=1, value="carrot", features=['orange', 'root']}; 
+- [x] let o = { number: 1, value: "carrot", features: ['orange', 'root']}; 
+- [ ] let o = [ number: 1, value: "carrot", features: ['orange', 'root']]; 
+- [ ] let o = { number: 1; value: "carrot"; features: ['orange', 'root']}; 
+
+# Question 29
+1 / 1 pts
+It is possible to add new properties to a JavaScript object dynamically, such as:
+
+```javascript
+squirrel = { hungry: true, sleeping: false };
+squirrel.hasEaten
+```
+
+Of course, here's the continuation:
+
+```markdown
+= false;
+```
+- [x] True 
+- [ ] False 
+
+# Question 30
+1 / 1 pts
+If you want to include JavaScript on an HTML page, which tag do you use?
+
+```html
+<script>
+```
+- [ ] <javascript> 
+- [ ] <scripting> 
+- [ ] <js> 
+- [x] <script> 
+
+# Question 31
+1 / 1 pts
+Given the following HTML, what JavaScript could you use to set the text "yes" to "cow" and leave the "no" text unaffected?
+
+```html
+<p>no</p>
+<p class="demo">yes</p>
+<div class="demo">no</div>
+```
+```javascript
+document.querySelector("p.demo").textContent = "cow";
+```
+- [ ] document.getElement("p.demo").textContent = "cow"; 
+- [x] document.querySelector("p.demo").textContent = "cow"; 
+- [ ] document.querySelectorAll("p").forEach((e) => e.textContent = "cow") 
+- [ ] document#demo.textContent = "cow"; 
+
+# Question 32
+0.5 / 1 pts
+Which of the following correctly describes JSON?
+- [x] a server can use the JSON format to send a web browser some data 
+- [x] JSON objects contain attribute-value pairs 
+- [ ] JSON and JavaScript objects are equivalent 
+- [ ] JSON can only be used with JavaScript 
+JSON is a standard format. There are libraries to process JSON objects in many languages.
+
+# Question 33
+1 / 1 pts
+What does the console command chmod do?
+- [ ] Changes the mode for the console to super user. 
+- [x] Changes a file's mode bits to control the access rights to a file. 
+- [ ] Changes the model of the command line input to use bash syntax. 
+- [ ] Chains the model of the directory structure to a parent. 
+
+# Question 34
+1 / 1 pts
+Which of the following console command creates a remote shell session?
+- [ ] scp 
+- [ ] rmh 
+- [x] ssh 
+- [ ] rdp 
+
+# Question 35
+1 / 1 pts
+Which of the following is true when the -la parameter is specified for the ls console command?
+- [x] Outputs a long listing 
+- [ ] Outputs line numbers 
+- [x] Outputs all files 
+- [ ] Outputs in append mode 
+
+# Question 36
+0.67 / 1 pts
+Which of the following is true for the domain name demo.simon.myfunkychickens.click?
+- [x] demo.simon.myfunkychickens.click is a subdomain 
+- [ ] myfunkychickens.click is a top level domain (TLD) 
+- [x] click is a top level domain (TLD) 
+- [x] myfunkychickens.click is a root domain 
+
+# Question 37
+1 / 1 pts
+A web certificate is necessary to use HTTPS.
+- [x] True 
+- [ ] False 
+
+# Question 38
+0 / 1 pts
+A DNS A record can point to an IP address or another A record.
+- [x] True 
+- [ ] False 
+
+# Question 39
+1 / 1 pts
+Port 443 is reserved for which protocol?
+- [ ] SSH 
+- [ ] FTP 
+- [x] HTTP 
+- [ ] HTTPS 
+
+# Question 40
+0 / 1 pts
+What will the following code output when executed?
+
+```javascript
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+     console.log('banana')
+     resolve(true);
+  }, 10000);
+});
+console.log('ski');
+
+p.then((result) => console.log('fish'));
+
+console.log('taco');
+```
+- [ ] ski banana fish taco 
+- [ ] ski taco banana fish 
+- [x] ski taco banana fish 
+- [ ] ski fish banana taco 
+
+# Question 41
+1 / 1 pts
+What will the following code output when executed?
+
+```javascript
+const p = new Promise((resolve, reject) => {
+  reject(false);
+});
+
+p
+.then((a) => console.log('A'))
+.then((b) => console.log('B'))
+.catch((c) => console.log('C'))
+.finally(() => console.log('D'));
+```
+- [ ] A B D 
+- [ ] D 
+- [ ] A C D 
+- [x] C D 
+
+# Question 42
+1 / 1 pts
+What will the following code output when executed?
+
+```javascript
+const p = new Promise((resolve, reject) => {
+  resolve(true);
+});
+
+p
+.then((a) => console.log('A'))
+.then((b) => console.log('B'))
+.catch((c) => console.log('C'))
+.finally(() => console.log('D'));
+``
+
+- [x] A B D 
+- [ ] A B 
+- [ ] A B C D 
+- [ ] A D 
+
+# Question 43
+1 / 1 pts
+What will the following code output when executed?
+
+```javascript
+const a = async function() {
+ return new Promise((resolve, reject) => {
+  setTimeout(() => {
+     console.log('Oregon')
+     resolve(true);
+  }, 10000);
+ })
+}
+
+try {
+    console.log('Texas');
+    await a();
+    console.log('Utah')
+} catch(e) {
+    console.log('Ohio');
+}
+```
+- [ ] Texas Utah Oregon 
+- [ ] Oregon Texas Utah 
+- [x] Texas Oregon Utah 
+- [ ] Texas Oregon Ohio 
 ```
